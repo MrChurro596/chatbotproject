@@ -16,6 +16,7 @@ function question () {
 
 if (goodInput == "what is your name?") {
 
+  $("#chat-area").prepend(" Alex  Mason." + "<br>");
 
 }
     else if (goodInput == "how old are you?") {
