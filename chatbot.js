@@ -1,27 +1,44 @@
+$("#input").keydown(function(question) {
+
+  if(question.keyCode == 13) {
+    $("#talkButton").click();
+
+  }
+});
+
 function question () {
 
   var userInput = $("#input").val();
+
+  var goodInput = userInput.toLowerCase();
+
   $("#chat-area").prepend(userInput + "<br>");
 
-if ($("#input").val() == "What is your name?") {
+if (goodInput == "what is your name?") {
 
-  $("#chat-area").prepend("Mason." + "<br>");
 
-    }
-    else if ($("#input").val() == "How old are you?") {
+}
+    else if (goodInput == "how old are you?") {
 
       $("#chat-area").prepend("I am 83  years old." + "<br>");
 
     }
-    else if ($("#input").val() == "What time is it?") {
+    else if (goodInput == "what time is it?") {
 
         var time = new Date(Date.now());
-        $("#chat-area").prepend("It is currently" + time + "<br>");
+        var goodTime =
+        $("#chat-area").prepend("It is currently " + time + "<br>");
+
+    }
+    else if (goodInput == "what do the numbers mean mason!") {
+
+      $("#chat-area").prepend("I already told you I don't know what the numbers mean. I don't know what you expect me to remember." + "<br>")
 
     }
     else {
 
       var value = Math.floor((Math.random() * 100) + 1);
+      console.log(value);
 
       if (value <= 33) {
         $("#chat-area").prepend("I don't know what you want from me." + "<br>");
